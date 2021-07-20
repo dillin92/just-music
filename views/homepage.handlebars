@@ -1,0 +1,46 @@
+<nav>
+
+        <div class="nav-wrapper">
+            
+            <a href="../img/just-music-logo.jpg" class="brand-logo"></a>
+            <ul id="nav-mobile" class="right hide-on-med-and-down">
+
+                <li><a href="home.html">Home</a></li>
+                <li><a href="profile.html">Profile</a></li>
+                {{!-- <li><a href="messages.html">Messages</a></li> --}}
+                
+            </ul>
+        </div>
+
+</nav>  
+
+<div>Welcome to the Homepage!</div>
+
+
+<ol class="post-list">
+  <li>
+    <article class="post">
+      <div class="title">
+        <a href="{{post_url}}" target="_blank">{{title}}</a>
+        <span>({{post_url}})</span>
+      </div>
+      {{!-- <div class="meta">
+        {{vote_count}} point(s) by {{user.username}} on
+        {{created_at}}
+        |
+        <a href="/post/{{id}}">{{comments.length}} comment(s)</a>
+      </div> --}}
+    </article>
+  </li>
+</ol>
+
+<ul class="fav-bands">
+    <li>
+        <article class="band">
+            <p>{{ band }}</p>
+        </article>
+    </li>
+</ul>
+
+
+

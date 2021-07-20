@@ -1,0 +1,46 @@
+<section id="profile">
+    <div id="name-bio">
+        <h1>{{ firstName }} {{ lastName }}, {{{ user_type }}}</h1>
+         {{personalBio}}
+    </div>
+
+    <div id ="top-artists-wrapper">
+        <h3>Top 10 Artists</h3>
+        {{!-- Would like to add a "add new artist" button to handle the search artist form --}}
+        <p>Enter the name of your favorite artist</p>
+    <form id="artist-form" class="form-group">
+        <input type="text" name="artist-name" id="search-text" placeholder="Enter Artist Name" />
+        <button class="btn btn-group" id="search-artist" type="button">Add Artist</button>
+    </form>
+            <ul id="top-artists">
+                {{!-- {{#each artists}}
+                <li>{{artist}}</li>
+                {{/each}} --}}
+            </ul>
+    </div>
+
+    <div id="concerts">
+        <h3>Most Memorable Concerts</h3>
+{{!-- Would like to add a "add new artist" button to handle the search artist form --}}
+            <form id="concerts-form" class="form-group">
+            <input type="text" class="form-control" id="concert-date" placeholder="mm/yyyy" autocomplete="off" />
+            <textarea class="form-control" id="concert-details" placeholder="Add concert details here"/>
+            <button class="btn" id="save-concert" type="button">Save Concert</button>
+            </form>
+            <ul id="memorable-concerts"></ul>
+            {{!-- <ul>
+                {{#each concerts}}
+                <div>{{concert}}</div>
+                {{/each}}
+            </ul> --}}
+    </div> 
+
+    <div id="recent-posts">
+        <h2>Recent Posts</h2>
+            <ul>
+                {{#each posts}}
+                <div>{{post}}</div>
+                {{/each}}
+            </ul>
+    </div>
+</section>
