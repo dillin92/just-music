@@ -82,7 +82,6 @@ app.delete('/api/account_info/:id', (req, res) => {
         });
 });
 
-
 // Create a user
 app.post('/api/account_info', ({ body }, res) => {
         const errors = inputCheck(
