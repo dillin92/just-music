@@ -90,4 +90,176 @@ router.post('/account_info', ({ body }, res) => {
     });     
 });
 
+// Update user first_name
+router.put('/account_info/first_name/:id', (req, res) => {
+        // Data validation
+        const errors = inputCheck(req.body, 'first_name');
+        if (errors) {
+                res.status(400).json({ error: errors });
+                return;
+        }
+        
+        const sql = `UPDATE account_info SET first_name = ? WHERE id = ?`;
+        const params = [req.body.first_name, req.params.id];
+
+        db.query(sql, params, (err, result) => {
+                if (err) {
+                        res.status(400).json({ error: err.message});
+                } else if (!result.affectedRows) {
+                        res.json ({
+                        message: 'User not found'
+                });
+                } else {
+                        res.json({
+                                message: 'success',
+                                data: req.body,
+                                changes: result.affectedRows
+                        });
+                }
+        });
+});
+
+// Update user last_name
+router.put('/account_info/last_name/:id', (req, res) => {
+        // Data validation
+        const errors = inputCheck(req.body, 'last_name');
+        if (errors) {
+                res.status(400).json({ error: errors });
+                return;
+        }
+        
+        const sql = `UPDATE account_info SET last_name = ? WHERE id = ?`;
+        const params = [req.body.last_name, req.params.id];
+
+        db.query(sql, params, (err, result) => {
+                if (err) {
+                        res.status(400).json({ error: err.message});
+                } else if (!result.affectedRows) {
+                        res.json ({
+                        message: 'User not found'
+                });
+                } else {
+                        res.json({
+                                message: 'success',
+                                data: req.body,
+                                changes: result.affectedRows
+                        });
+                }
+        });
+});
+
+// Update user_type
+router.put('/account_info/user_type/:id', (req, res) => {
+        // Data validation
+        const errors = inputCheck(req.body, 'user_type');
+        if (errors) {
+                res.status(400).json({ error: errors });
+                return;
+        }
+        
+        const sql = `UPDATE account_info SET user_type = ? WHERE id = ?`;
+        const params = [req.body.user_type, req.params.id];
+
+        db.query(sql, params, (err, result) => {
+                if (err) {
+                        res.status(400).json({ error: err.message});
+                } else if (!result.affectedRows) {
+                        res.json ({
+                        message: 'User not found'
+                });
+                } else {
+                        res.json({
+                                message: 'success',
+                                data: req.body,
+                                changes: result.affectedRows
+                        });
+                }
+        });
+});
+// Update user__name
+router.put('/account_info/user_name/:id', (req, res) => {
+        // Data validation
+        const errors = inputCheck(req.body, 'user_name');
+        if (errors) {
+                res.status(400).json({ error: errors });
+                return;
+        }
+        
+        const sql = `UPDATE account_info SET user_name = ? WHERE id = ?`;
+        const params = [req.body.user_name, req.params.id];
+
+        db.query(sql, params, (err, result) => {
+                if (err) {
+                        res.status(400).json({ error: err.message});
+                } else if (!result.affectedRows) {
+                        res.json ({
+                        message: 'User not found'
+                });
+                } else {
+                        res.json({
+                                message: 'success',
+                                data: req.body,
+                                changes: result.affectedRows
+                        });
+                }
+        });
+});
+   
+// Update user's account_password
+router.put('/account_info/account_password/:id', (req, res) => {
+        // Data validation
+        const errors = inputCheck(req.body, 'account_password');
+        if (errors) {
+                res.status(400).json({ error: errors });
+                return;
+        }
+        
+        const sql = `UPDATE account_info SET account_password = ? WHERE id = ?`;
+        const params = [req.body.account_password, req.params.id];
+
+        db.query(sql, params, (err, result) => {
+                if (err) {
+                        res.status(400).json({ error: err.message});
+                } else if (!result.affectedRows) {
+                        res.json ({
+                        message: 'User not found'
+                });
+                } else {
+                        res.json({
+                                message: 'success',
+                                data: req.body,
+                                changes: result.affectedRows
+                        });
+                }
+        });
+});
+// Update email_address
+router.put('/account_info/email_address/:id', (req, res) => {
+        // Data validation
+        const errors = inputCheck(req.body, 'email_address');
+        if (errors) {
+                res.status(400).json({ error: errors });
+                return;
+        }
+        
+        const sql = `UPDATE account_info SET email_address = ? WHERE id = ?`;
+        const params = [req.body.email_address, req.params.id];
+
+        db.query(sql, params, (err, result) => {
+                if (err) {
+                        res.status(400).json({ error: err.message});
+                } else if (!result.affectedRows) {
+                        res.json ({
+                        message: 'User not found'
+                });
+                } else {
+                        res.json({
+                                message: 'success',
+                                data: req.body,
+                                changes: result.affectedRows
+                        });
+                }
+        });
+});
+
 module.exports = router;
