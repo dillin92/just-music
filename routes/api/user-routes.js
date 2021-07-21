@@ -40,6 +40,7 @@ router.post('/', (req, res) => {
                 first_name: req.body.first_name,
                 last_name: req.body.last_name,
                 user_type: req.body.user_type,
+                username: req.body.username,
                 email_address: req.body.email_address,
                 password: req.body.password
         })
