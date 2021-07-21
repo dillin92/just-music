@@ -4,8 +4,26 @@
          {{personalBio}}
     </div>
 
-    <div id ="top-artists-wrapper">
+
+
+
+
+<div  class="section" id="top-artists-wrapper">
+    <div class="row">
         <h3>Top 10 Artists</h3>
+    </div>
+
+    <div class="card-small" id="artist-1">
+        <p class="card-title" id="artist-name"></p>
+        <div class="card-image" id="artist-photo"></div>
+    </div>
+        
+
+
+
+
+
+
         {{!-- Would like to add a "add new artist" button to handle the search artist form --}}
         <p>Enter the name of your favorite artist</p>
     <form id="artist-form" class="form-group">
@@ -17,6 +35,9 @@
                 <li>{{artist}}</li>
                 {{/each}} --}}
             </ul>
+
+            </div>
+        </div>
     </div>
 
     <div id="concerts">
