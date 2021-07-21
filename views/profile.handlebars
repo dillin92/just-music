@@ -4,64 +4,57 @@
          {{personalBio}}
     </div>
 
+    <div class="container">
+  <div class="section" id="top-artists-wrapper">
+  <div class="row">
+    <h3>Top 10 Artists</h3>
+  </div>
 
-
-
-
-<div  class="section" id="top-artists-wrapper">
-    <div class="row">
-        <h3>Top 10 Artists</h3>
-    </div>
-
-    <div class="card-small" id="artist-1">
-        <p class="card-title" id="artist-name"></p>
-        <div class="card-image" id="artist-photo"></div>
-    </div>
-        
-
-
-
-
-
-
-        {{!-- Would like to add a "add new artist" button to handle the search artist form --}}
-        <p>Enter the name of your favorite artist</p>
+  </div>
+    
+    <p>Enter the name of your favorite artist</p>
     <form id="artist-form" class="form-group">
-        <input type="text" name="artist-name" id="search-text" placeholder="Enter Artist Name" />
-        <button class="btn btn-group" id="search-artist" type="button">Add Artist</button>
+      <input type="text" name="artist-name" id="search-text" placeholder="Enter Artist Name"></input>
+      <a class="btn" id="search-artist">Add Artist</a>
     </form>
-            <ul id="top-artists">
-                {{!-- {{#each artists}}
-                <li>{{artist}}</li>
-                {{/each}} --}}
-            </ul>
 
-            </div>
-        </div>
+
+    <div class ="row" >
+      <div id="top-artists">
+        
+      </div>
+
+
     </div>
 
-    <div id="concerts">
-        <h3>Most Memorable Concerts</h3>
-{{!-- Would like to add a "add new artist" button to handle the search artist form --}}
-            <form id="concerts-form" class="form-group">
-            <input type="text" class="form-control" id="concert-date" placeholder="mm/yyyy" autocomplete="off" />
-            <textarea class="form-control" id="concert-details" placeholder="Add concert details here"/>
-            <button class="btn" id="save-concert" type="button">Save Concert</button>
-            </form>
-            <ul id="memorable-concerts"></ul>
-            {{!-- <ul>
-                {{#each concerts}}
-                <div>{{concert}}</div>
-                {{/each}}
-            </ul> --}}
-    </div> 
-
-    <div id="recent-posts">
-        <h2>Recent Posts</h2>
-            <ul>
-                {{#each posts}}
-                <div>{{post}}</div>
-                {{/each}}
-            </ul>
     </div>
-</section>
+
+          <div class="section" id="concerts">
+              <h3>Most Memorable Concerts</h3>
+     
+      <div class="row"></div>            
+      <form id="concerts-form" class="col s12">
+                  <div class="row">
+                    <div class="input-field col s6">
+                      <input type="text" id="concert-name" placeholder="Enter Concert/Artist Name">
+
+                    </div>
+                    <div class="input-field col 3">
+                      <input type="date" id="concert-date">
+                      <label for="concert-date">Enter Concert Date</label>
+                    </div>
+                  </div>
+                  <div class="input-field row"></div>
+                    <textarea class="materialize-textarea" id="concert-details" placeholder="Add concert details here"></textarea>
+                    <button class="btn" id="save-concert" type="button">Save Concert</button>
+                  </form>
+                  
+                  <ul id="memorable-concerts"></ul>
+  
+          </div> 
+      
+          <div class="section" id="recent-posts">
+              <h2>Recent Posts</h2>
+          </div> 
+      </section>
+  </div>
