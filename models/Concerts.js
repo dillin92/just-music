@@ -11,9 +11,17 @@ Concerts.init(
             primaryKey: true,
             autoIncrement: true
         },
-        concert_text: {
+        concert_Nnme: {
             type: DataTypes.STRING,
-            allowNull: false
+            allowNull: true
+        },
+        concert_date: {
+            type: DataTypes.STRING,
+            allowNull: true
+        },
+        concert_details: {
+            type: DataTypes.STRING,
+            allowNull: true
         },
         user_id: {
             type: DataTypes.INTEGER,
@@ -27,7 +35,7 @@ Concerts.init(
         sequelize,
         freezeTableName: true,
         underscored: true,
-        modelName: 'Concerts'
+        modelName: 'concerts'
     }
 );
 

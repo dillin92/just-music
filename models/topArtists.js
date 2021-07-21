@@ -14,7 +14,7 @@ TopArtists.init(
         artist: {
             artistName: DataTypes.STRING,
             artistImg: DataTypes.STRING,
-            allowNull: false
+            allowNull: true
         },
         user_id: {
             type: DataTypes.INTEGER,
