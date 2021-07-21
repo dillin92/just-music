@@ -17,30 +17,18 @@
 
 <div>🎵Welcome to the Homepage!🎵</div>
 
-<form id="add-post">
+<div>
+  {{> new-post }}
+</div>
 
-</form>
 
-
-<ol class="post-list">
-    <button id="add-post">🎵Add a Post🎵</button>
+<ul class="post-list">
+  {{#each posts as |post|}}
   <li>
-      <div class="title">
-        <a href="{{post_url}}" target="_blank">{{title}}</a>
-        <span>({{post_url}})</span>
-      </div>
-    <article class="post">
-      
-      {{!-- <div class="meta">
-        {{vote_count}} point(s) by {{user.username}} on
-        {{created_at}}
-        |
-        <a href="/post/{{id}}">{{comments.length}} comment(s)</a>
-      </div> --}}
-    </article>
+    {{> post-info post }}
   </li>
-</ol>
-
+  {{/each}}
+</ul>
 
 
 
