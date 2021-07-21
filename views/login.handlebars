@@ -1,5 +1,6 @@
-<form class="login-form col s12">
-  <div class="row">
+<div class="row">
+  <form class="login-form col s11 offset-s1">
+    <div class="row">
       <div>
         <p>LOGIN</p>
       </div>
@@ -9,53 +10,59 @@
       </div>
       <div class="input-field col s6">
         <label for="password-login">Password:</label>
-        <input type="password" id="password-login" class="validate"/>
+        <input type="password" id="password-login" class="validate" />
       </div>
       <div>
         <button class="btn waves-effect waves-light indigo darken-2" type="submit" name="action">Submit
           <i class="material-icons right"></i>
         </button>
       </div>
-  </div>
-</form>
-
-<form class="signup-form col s12">
-  <div class="row">
-    <div>
+    </div>
+  </form>
+</div>
+<script>
+  $(document).ready(function () {
+    $('select').material_select();
+  });
+</script>
+<div class="row">
+  <form class="signup-form col s11 offset-s1">
+    <div class="row">
+      <div>
         <p>Sign-Up for JustMusic</p>
-    </div>
-    <div class="input-field col s6">
-      <label for="first_name">First Name:</label>
-      <input id="first_name" type="text" class="validate">
-    </div>
-    <div class="input-field col s6">
-      <label for="last_name">Last Name:</label>     
-      <input id="last_name" type="text" class="validate">
-    </div>
-     <div class="input-field col s6">
-      <label for="email-signup">Email:</label>
-      <input type="email" id="email-signup" class="validate"/>
-    </div>
-    <div class="input-field col s6">
-      <label for="password-signup">Password:</label>
-      <input type="password" id="password-signup" class="validate"/>
-    </div>
-    <div class="input-field col s6">
-    <select>
-      <option value="" disabled selected>Choose your option</option>
-      <option value="fan">Fan</option>
-      <option value="artist">Artist</option>
-      <option value="producer">Producer</option>
-      <option value="manager">Manager</option>
-    </select>
-    <label>Select User Type</label>
-  </div>
-    <div>
-      <button class="btn waves-effect waves-light indigo darken-2" type="submit" name="action">Submit
+      </div>
+      <div class="input-field col s6">
+        <label for="first_name">First Name:</label>
+        <input id="first_name" type="text" class="validate">
+      </div>
+      <div class="input-field col s6">
+        <label for="last_name">Last Name:</label>
+        <input id="last_name" type="text" class="validate">
+      </div>
+      <div class="input-field col s6">
+        <label for="email-signup">Email:</label>
+        <input type="email" id="email-signup" class="validate" />
+      </div>
+      <div class="input-field col s6">
+        <label for="password-signup">Password:</label>
+        <input type="password" id="password-signup" class="validate" />
+      </div>
+      <div class="input-field col s6">
+        <select>
+          <option value="" disabled selected>Select User Type</option>
+          <option value="fan">Fan</option>
+          <option value="artist">Artist</option>
+          <option value="producer">Producer</option>
+          <option value="manager">Manager</option>
+        </select>
+        <label></label>
+      </div>
+      <div>
+        <button class="btn waves-effect waves-light indigo darken-2" type="submit" name="action">Submit
           <i class="material-icons right"></i>
         </button>
+      </div>
     </div>
-  </div>
-</form>
-
+  </form>
+</div>
 <script src="/javascript/login.js"></script>
