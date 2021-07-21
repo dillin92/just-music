@@ -4,19 +4,20 @@ function addPost() {
     event.preventDefault();
     const id = window.location.toString().split('/')[
         window.location.toString().split('/').length - 1
-      ];
-      const response = await fetch(`/api/posts/${id}`, {
+    ];
+    const response = await fetch(`/api/posts/${id}`, {
         method: 'POST'
-      });
+    });
     
-      if (response.ok) {
+    if (response.ok) {
         document.location.replace('/homepage/');
-      } else {
+    } else {
         alert(response.statusText);
-      }
     }
+    
     
     document.querySelector('.delete-post-btn').addEventListener('click', deleteFormHandler);
 
 
-} 
+}
+
