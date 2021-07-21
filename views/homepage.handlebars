@@ -5,8 +5,9 @@
             <a href="../img/just-music-logo.jpg" class="brand-logo"></a>
             <ul id="nav-mobile" class="right hide-on-med-and-down">
 
-                <li><a href="home.html">Home</a></li>
-                <li><a href="profile.html">Profile</a></li>
+                <li><a href="home.html">🎵Home🎵</a></li>
+                <li><a href="profile.html"🎵>Profile🎵</a></li>
+                <li><a href="login.html">🎵Logout🎵</a></li>
                 {{!-- <li><a href="messages.html">Messages</a></li> --}}
                 
             </ul>
@@ -14,16 +15,22 @@
 
 </nav>  
 
-<div>Welcome to the Homepage!</div>
+<div>🎵Welcome to the Homepage!🎵</div>
+
+<form id="add-post">
+
+</form>
 
 
 <ol class="post-list">
+    <button id="add-post">🎵Add a Post🎵</button>
   <li>
-    <article class="post">
       <div class="title">
         <a href="{{post_url}}" target="_blank">{{title}}</a>
         <span>({{post_url}})</span>
       </div>
+    <article class="post">
+      
       {{!-- <div class="meta">
         {{vote_count}} point(s) by {{user.username}} on
         {{created_at}}
