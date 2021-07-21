@@ -30,7 +30,7 @@ User.init(
         },
         username: {
             type: DataTypes.STRING,
-            allowNull: false
+            allowNull: true
         },
         email_address:{
             type: DataTypes.STRING,
