@@ -1,6 +1,6 @@
 function addPost(event) {
   event.preventDefault();
-
+ 
   const title = document.querySelector('input[name="post-title"]').value;
   const postContent = document.querySelector('input[name="post-body"]').value;
 

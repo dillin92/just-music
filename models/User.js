@@ -24,12 +24,14 @@ User.init(
             type: DataTypes.STRING,
             allowNull: false
         },
-        user_type:{},
-        // user_name:{
-        //     type: DataTypes.STRING,
-        //     allowNull: false,
-        //     unique: true
-        // },
+        user_type:{        
+            type: DataTypes.STRING,
+            allowNull: false   
+        },
+        username: {
+            type: DataTypes.STRING,
+            allowNull: false
+        },
         email_address:{
             type: DataTypes.STRING,
             allowNull: false,
@@ -45,15 +47,16 @@ User.init(
                 len: [8, 16]
             } 
         }
-    },{
+    },
+    {
         hooks:{
-            async beforeCreate(newUser){
-                newUser.password = await bcrypt.hash(newuser.password,10);
-                return newUser;
+            async beforeCreate(newUserData){
+                newUserData.password = await bcrypt.hash(newUserData.password,10);
+                return newUserData;
             },
-            async beforeUpdate(updatedUser) {
-                updatedUser.password = await bcrypt.hash(updatedUser.password);
-                return updatedUser;
+            async beforeUpdate(updatedUserData) {
+                updatedUserData.password = await bcrypt.hash(updatedUserData.password);
+                return updatedUserData;
             }
         },
         sequelize,
