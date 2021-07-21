@@ -1,22 +1,27 @@
-const addPostBtn = document.querySelector('#add-post')
+function addPost(event) {
+  event.preventDefault();
 
-function addPost() {
-    event.preventDefault();
-    const id = window.location.toString().split('/')[
-        window.location.toString().split('/').length - 1
-      ];
-      const response = await fetch(`/api/posts/${id}`, {
-        method: 'POST'
-      });
-    
-      if (response.ok) {
-        document.location.replace('/homepage/');
-      } else {
-        alert(response.statusText);
-      }
+  const title = document.querySelector('input[name="post-title"]').value;
+  const postContent = document.querySelector('input[name="post-body"]').value;
+
+  const response = await fetch(`/api/posts`, {
+    method: 'POST',
+    body: JSON.stringify({
+      title,
+      postContent
+    }),
+    headers: {
+      'Content-Type': 'application/json'
     }
-    
-    document.querySelector('.delete-post-btn').addEventListener('click', deleteFormHandler);
+  });
+
+  if (response.ok) {
+    document.location.replace('/homepage');
+  } else {
+    alert(response.statusText);
+  }
 
 
-} 
+document.querySelector('#post-submit').addEventListener('submit', addPost);
+  
+};
