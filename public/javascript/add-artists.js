@@ -1,3 +1,4 @@
+// Create
 $("#artist-form").submit(function(event) {
     event.preventDefault();
     $("#search-artist").click();
