@@ -6,7 +6,7 @@ class TopArtists extends Model {}
 TopArtists.init(
     {
         id: {
-            type: dataTypes.INTEGER,
+            type: DataTypes.INTEGER,
             allowNull: false,
             primaryKey: true,
             autoIncrement: true
