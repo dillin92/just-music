@@ -20,7 +20,7 @@ const sess = {
 
 app.use(session(sess));
 
-const helpers = require('./utils/helpers');
+const helpers = require('./utils/helper');
 
 const hbs = exphbs.create({ helpers });
 
@@ -36,7 +36,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use(require('./controllers/'));
 
 // turn on connection to db and server
-sequelize.sync({ force: true }).then(() => {
+sequelize.sync({ force: false }).then(() => {
         app.listen(PORT, () => console.log('Now listening'));
 });
 
