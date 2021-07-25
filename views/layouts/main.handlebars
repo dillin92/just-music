@@ -14,11 +14,31 @@
 </head>
 <body>
 
-    <link rel = "stylesheet" href = "https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.3/css/materialize.min.css">
-    <script type= "text/javascript" src ="https://code.jquery.com/jquery-2.1.1.min.js"></script>
-    <script src= "https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.3/js/materialize.mmin.js"></script>
+  <header>
+    <nav>
+      {{#if loggedIn}}
+
+          <div class="nav-wrapper">
+              
+              <a href="../img/just-music-logo.jpg" class="brand-logo">Just Music</a>
+              <ul id="nav-mobile" class="right hide-on-med-and-down">
+
+                  <li><a href="/homepage">🎵Home🎵</a></li>
+                  <li><a href="/profile"🎵>Profile🎵</a></li>
+                  <button id="logout" class="btn">🎵Logout🎵</button>
+                  {{else}}
+                  <a href="/login">🎵Login🎵</a>
+                  {{!-- <li><a href="messages.html">Messages</a></li> --}}
+                  
+              </ul>
+          </div>
+          {{/if}}
+    </nav>
+  </header>
+    
 
     <main>
+        {{> login }}
         {{{ body }}}
     </main>
     
@@ -38,7 +58,6 @@
             </div>
           </div>
     </footer>
-
 </body>
 
 </html>
