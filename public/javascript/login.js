@@ -31,7 +31,7 @@ async function loginFormHandler(event) {
     const email = document.querySelector('#email-signup').value.trim();
     const password = document.querySelector('#password-signup').value.trim();
   
-    if (email && password) {
+    if (email && password && fname && lname && userType) {
       const response = await fetch('/api/users', {
         method: 'post',
         body: JSON.stringify({
