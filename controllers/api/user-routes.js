@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const { User, Post } = require('../../models');
+const { User, Post, Comment } = require('../../models');
 
 // Get all users
 router.get('/', (req, res) => {
@@ -54,7 +54,6 @@ router.post('/', (req, res) => {
                 first_name: req.body.first_name,
                 last_name: req.body.last_name,
                 user_type: req.body.user_type,
-                username: req.body.username,
                 email_address: req.body.email_address,
                 password: req.body.password
         })
@@ -94,7 +93,7 @@ router.post('/login', (req, res) => {
                 
                 req.session.save(() => {
                         req.session.user_id = dbUserData.id;
-                        req.session.username = dbUserData.username;
+                        req.session.email_address = dbUserData.email_address;
                         req.session.loggedIn = true;
 
                         res.json({ user: dbUserData, message: 'You are now logged in!'});

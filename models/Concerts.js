@@ -1,19 +1,27 @@
 const { Model, DataTypes } = require('sequelize');
 const sequelize = require('../config/connection');
 
-class Concerts extends Model {}
+class Concert extends Model {}
 
-Concerts.init(
+Concert.init(
     {
         id: {
-            type: dataTypes.STRING,
+            type: DataTypes.INTEGER,
             allowNull: false,
             primaryKey: true,
             autoIncrement: true
         },
-        concert_text: {
+        concert_name: {
             type: DataTypes.STRING,
-            allowNull: false
+            allowNull: true
+        },
+        concert_date: {
+            type: DataTypes.DATE,
+            allowNull: true
+        },
+        concert_details: {
+            type: DataTypes.STRING,
+            allowNull: true
         },
         user_id: {
             type: DataTypes.INTEGER,
@@ -27,8 +35,8 @@ Concerts.init(
         sequelize,
         freezeTableName: true,
         underscored: true,
-        modelName: 'Concerts'
+        modelName: 'concerts'
     }
 );
 
-moodule.exports = Concerts;
+module.exports = Concert;
