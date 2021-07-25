@@ -25,6 +25,9 @@ async function loginFormHandler(event) {
   async function signupFormHandler(event) {
     event.preventDefault();
   
+    const fname = document.querySelector('#first-name').value.trim();
+    const lname = document.querySelector('#last-name').value.trim();
+    const userType = document.querySelector('#userType').value.trim();
     const email = document.querySelector('#email-signup').value.trim();
     const password = document.querySelector('#password-signup').value.trim();
   
@@ -33,13 +36,16 @@ async function loginFormHandler(event) {
         method: 'post',
         body: JSON.stringify({
           email,
-          password
+          password, 
+          fname,
+          lname,
+          userType
         }),
         headers: { 'Content-Type': 'application/json' }
       });
   
       if (response.ok) {
-        document.location.replace('/homepage');
+        document.location.replace('/dashboard');
       } else {
         alert(response.statusText);
       }

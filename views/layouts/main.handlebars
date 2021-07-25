@@ -15,7 +15,7 @@
 <body>
 
   <header>
-    <nav>
+    <nav class="yellow darken-2" >
       {{#if loggedIn}}
 
           <div class="nav-wrapper">
@@ -27,7 +27,7 @@
                   <li><a href="/profile"🎵>Profile🎵</a></li>
                   <button id="logout" class="btn">🎵Logout🎵</button>
                   {{else}}
-                  <a href="/login">🎵Login🎵</a>
+                  <a href="/login" class="black-text">🎵Login🎵</a>
                   {{!-- <li><a href="messages.html">Messages</a></li> --}}
                   
               </ul>
@@ -42,7 +42,7 @@
         {{{ body }}}
     </main>
     
-    <footer class="page-footer">
+    <footer class="page-footer yellow darken-2">
           <div class="container">
             <div class="row">
               <div class="col l6 s12">
