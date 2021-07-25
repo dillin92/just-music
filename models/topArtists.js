@@ -1,9 +1,9 @@
 const { Model, DataTypes } = require('sequelize');
 const sequelize = require('../config/connection');
 
-class TopArtists extends Model {}
+class TopArtist extends Model {}
 
-TopArtists.init(
+TopArtist.init(
     {
         id: {
             type: DataTypes.INTEGER,
@@ -11,10 +11,14 @@ TopArtists.init(
             primaryKey: true,
             autoIncrement: true
         },
-        artist: {
-            artistName: DataTypes.STRING,
-            artistImg: DataTypes.STRING,
+        artist_name: {
+            type: DataTypes.STRING,
             allowNull: true
+        },
+        artist_image: {
+            type: DataTypes.BLOB,
+            allowNull: true
+        
         },
         user_id: {
             type: DataTypes.INTEGER,
@@ -28,8 +32,8 @@ TopArtists.init(
         sequelize,
         freezeTableName: true,
         underscored: true,
-        modelName: 'TopArtists'
+        modelName: 'topArtists'
     }
 );
 
-moodule.exports = TopArtists;
+module.exports = TopArtist;

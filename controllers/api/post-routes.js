@@ -10,7 +10,7 @@ router.get('/', (req, res) => {
         include: [
             {
                 model: User,
-                attributes: ['username']
+                attributes: ['email_address']
             }
         ]
     })
@@ -31,7 +31,7 @@ router.get('/:id', (req, res) => {
         include: [
             {
                 model: User,
-                attributes: ['username']
+                attributes: ['email_address']
             }
         ]
     })
@@ -49,7 +49,7 @@ router.get('/:id', (req, res) => {
 });
 
 // Create a post
-router.post('/', (req,res) => {
+router.post('/', (req, res) => {
     Post.create({
         title: req.body.title,
         post_url: req.body.post_url,

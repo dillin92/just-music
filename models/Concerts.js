@@ -1,9 +1,9 @@
 const { Model, DataTypes } = require('sequelize');
 const sequelize = require('../config/connection');
 
-class Concerts extends Model {}
+class Concert extends Model {}
 
-Concerts.init(
+Concert.init(
     {
         id: {
             type: DataTypes.INTEGER,
@@ -11,12 +11,12 @@ Concerts.init(
             primaryKey: true,
             autoIncrement: true
         },
-        concert_Nnme: {
+        concert_name: {
             type: DataTypes.STRING,
             allowNull: true
         },
         concert_date: {
-            type: DataTypes.STRING,
+            type: DataTypes.DATE,
             allowNull: true
         },
         concert_details: {
@@ -39,4 +39,4 @@ Concerts.init(
     }
 );
 
-moodule.exports = Concerts;
+module.exports = Concert;
