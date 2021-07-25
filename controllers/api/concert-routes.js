@@ -1,5 +1,6 @@
 const router = require('express').Router();
 const { User, Concert } = require('../../models');
+const withAuth = require('../../utils/auth');
 
 //Get all concerts
 router.get('/', (req, res) => {
@@ -47,7 +48,7 @@ router.get('/:id', (req, res) => {
 });
 
 // Add concert 
-router.post('/', (req, res) => {
+router.post('/', withAuth, (req, res) => {
     Concert.create({
         concert_name: req.body.concert_name,
         concert_date: req.body.concert_date,
@@ -62,7 +63,7 @@ router.post('/', (req, res) => {
 });
 
 // Update artist info
-router.put('/:id', (req, res) => {
+router.put('/:id', withAuth, (req, res) => {
     Concert.update(
         {
             concert_name: req.body.concert_name
@@ -87,7 +88,7 @@ router.put('/:id', (req, res) => {
 });
 
 // Delete an artist from the list
-router.delete('/:id', (req, res) => {
+router.delete('/:id', withAuth, (req, res) => {
     Concert.destroy({
         where: {
             id: req.params.id

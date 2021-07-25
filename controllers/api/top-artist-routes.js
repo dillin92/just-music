@@ -1,5 +1,6 @@
 const router = require('express').Router();
 const { User, TopArtist } = require('../../models');
+const withAuth = require('../../utils/auth');
 
 //Get all artists
 router.get('/', (req, res) => {
@@ -47,7 +48,7 @@ router.get('/:id', (req, res) => {
 });
 
 // Add artist to list
-router.post('/', (req, res) => {
+router.post('/', withAuth, (req, res) => {
     TopArtist.create({
         artist_name: req.body.artist_name,
         artist_image: req.body.artist_image,
@@ -61,7 +62,7 @@ router.post('/', (req, res) => {
 });
 
 // Update artist info
-router.put('/:id', (req, res) => {
+router.put('/:id', withAuth, (req, res) => {
     TopArtist.update(
         {
             artist_name: req.body.artist_name
@@ -86,7 +87,7 @@ router.put('/:id', (req, res) => {
 });
 
 // Delete an artist from the list
-router.delete('/:id', (req, res) => {
+router.delete('/:id', withAuth, (req, res) => {
     TopArtist.destroy({
         where: {
             id: req.params.id
