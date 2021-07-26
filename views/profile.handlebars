@@ -20,40 +20,57 @@
 
     <div class ="row" >
       <div id="top-artists">
-        {{ top-artists }} 
+        {{#each TopArtists}}
+        <div class="card col s3">
+          <p class="card-title"> {{artist-name}} </p>
+          <div class="card-image">{{artist-img}}</div>
       </div>
+      {{/each}}
       
 
     </div>
 
     </div>
 
-          <div class="section" id="concerts">
-              <h3>Most Memorable Concerts</h3>
+    <div class="section" id="concerts">
+      <h3>Most Memorable Concerts</h3>
      
-      <div class="row"></div>            
+    <div class="row">           
       <form id="concerts-form" class="col s12">
-                  <div class="row">
-                    <div class="input-field col s6">
-                      <input type="text" id="concert-name" placeholder="Enter Concert/Artist Name">
+        <div class="input-field col s6">
+          <input type="text" id="concert-name" placeholder="Enter Concert/Artist Name">
+        </div>
+        <div class="input-field col 3">
+            <input type="date" id="concert-date">
+            <label for="concert-date">Enter Concert Date</label>
+        </div>
+        <div class="input-field row">
+          <textarea class="materialize-textarea" id="concert-details" placeholder="Add concert details here"></textarea>
+          <button class="btn" id="save-concert" type="button">Save Concert</button>
+        </div>
+    </form>
 
-                    </div>
-                    <div class="input-field col 3">
-                      <input type="date" id="concert-date">
-                      <label for="concert-date">Enter Concert Date</label>
-                    </div>
-                  </div>
-                  <div class="input-field row"></div>
-                    <textarea class="materialize-textarea" id="concert-details" placeholder="Add concert details here"></textarea>
-                    <button class="btn" id="save-concert" type="button">Save Concert</button>
-                  </form>
-                  
-                  <ul id="memorable-concerts"></ul>
-  
-          </div> 
+    <div class ="row">
+      <ul id="memorable-concerts"></ul>
+      {{#each Concerts}}
+      <li class="memorable-concert">
+        <div class="card col s10">
+          <h4 class="card-title">{{concert_name}}</h4>
+          <span>{{concert_date}}</span>
+          <p class="card-content">{{concert_details}}</p>
+        </div>
+      </li>
+      {{/each}}
+    </div> 
       
-          <div class="section" id="recent-posts">
-              <h2>Recent Posts</h2>
-          </div> 
-      </section>
+    <div class="section" id="recent-posts">
+      <h2>Recent Posts</h2>
+      {{#each Post}}
+      <div class="section">
+        {{>post-info.handlebars}}
+      </div>
+      {{/each}}
+
+    </div> 
+  </section>
   </div>
