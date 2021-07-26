@@ -17,7 +17,7 @@ The just-music website is a music focused social media website. Users can create
 
 Website Link
 
-Click [here](https://marksherm04.github.io/IntSpaceStation-Tracker/) to go to the just-music website.
+Click [here](https://justmusic-3.herokuapp.com/) to go to the just-music website.
 
 ## Screenshot
 
