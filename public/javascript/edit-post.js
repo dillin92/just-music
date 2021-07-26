@@ -16,7 +16,7 @@ async function editFormHandler(event) {
     });
   
     if (response.ok) {
-      document.location.replace('/homepage/');
+      document.location.replace('/homepage/'); // might need to change
     } else {
       alert(response.statusText);
     }

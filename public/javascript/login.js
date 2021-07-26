@@ -15,7 +15,7 @@ async function loginFormHandler(event) {
       });
   
       if (response.ok) {
-        document.location.replace('/homepage');
+        document.location.replace('/homepage'); //Might need it to change
       } else {
         alert(response.statusText);
       }
@@ -25,14 +25,20 @@ async function loginFormHandler(event) {
   async function signupFormHandler(event) {
     event.preventDefault();
   
-    const email = document.querySelector('#email-signup').value.trim();
+    const email_address = document.querySelector('#email-signup').value.trim();
     const password = document.querySelector('#password-signup').value.trim();
+    const first_name = document.querySelector('#first-name').value.trim();
+    const last_name = document.querySelector('#last-name').value.trim();
+    const userType = document.querySelector('#userType').value.trim();
   
-    if (email && password) {
-      const response = await fetch('/api/account_info', {
+    if (email_address && password && first_name && last_name && userType) {
+      const response = await fetch('/api/users', {
         method: 'post',
         body: JSON.stringify({
-          email,
+          first_name,
+          last_name,
+          userType,
+          email_address,
           password
         }),
         headers: { 'Content-Type': 'application/json' }
