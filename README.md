@@ -21,7 +21,7 @@ Click [here](https://marksherm04.github.io/IntSpaceStation-Tracker/) to go to th
 
 ## Screenshot
 
-<img width="2556" alt="Just-Music login page" src="https://user-images.githubusercontent.com/81338255/119729816-176c6c80-be43-11eb-8aa5-6288badacc8a.png">
+<img width="2556" alt="Just-Music login page" src="img\Just_Music_Login.JPG">
 
 ## Features
 - Interactive login page that allows users to login or create a profile
