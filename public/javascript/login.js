@@ -1,14 +1,14 @@
 async function loginFormHandler(event) {
     event.preventDefault();
   
-    const email = document.querySelector('#email-login').value.trim();
+    const email_address = document.querySelector('#email-login').value.trim();
     const password = document.querySelector('#password-login').value.trim();
   
-    if (email && password) {
+    if (email_address && password) {
       const response = await fetch('/api/users/login', {
         method: 'post',
         body: JSON.stringify({
-          email,
+          email_address,
           password
         }),
         headers: { 'Content-Type': 'application/json' }
@@ -27,17 +27,17 @@ async function loginFormHandler(event) {
   
     const email_address = document.querySelector('#email-signup').value.trim();
     const password = document.querySelector('#password-signup').value.trim();
-    const first_name = document.querySelector('#first-name').value.trim();
-    const last_name = document.querySelector('#last-name').value.trim();
-    const userType = document.querySelector('#userType').value.trim();
+    const first_name = document.querySelector('#first_name').value.trim();
+    const last_name = document.querySelector('#last_name').value.trim();
+    const user_type = document.querySelector('#user_type').value;
   
-    if (email_address && password && first_name && last_name && userType) {
+    if (email_address && password && first_name && last_name && user_type) {
       const response = await fetch('/api/users', {
         method: 'post',
         body: JSON.stringify({
           first_name,
           last_name,
-          userType,
+          user_type,
           email_address,
           password
         }),
@@ -45,7 +45,7 @@ async function loginFormHandler(event) {
       });
   
       if (response.ok) {
-        document.location.replace('/dashboard');
+        document.location.replace('/dashboard/');
       } else {
         alert(response.statusText);
       }
