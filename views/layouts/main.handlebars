@@ -27,15 +27,16 @@
                   <li><a href="/profile"🎵>Profile🎵</a></li>
                   <button id="logout" class="btn">🎵Logout🎵</button>
                   {{else}}
-                  <a href="/login" class="black-text">🎵Login🎵</a>
-                  {{!-- <li><a href="messages.html">Messages</a></li> --}}
+                  
                   
               </ul>
           </div>
           {{/if}}
     </nav>
   </header>
-    
+    <section>
+      {{> login}}
+    </section>
 
     <main>
         {{{ body }}}
@@ -58,7 +59,7 @@
           </div>
     </footer>
     {{#if loggedIn}}
-    <script href="public\javascript\logout.js"></script>
+    <script src="/javascript/logout.js"></script>
     {{/if}}
 </body>
 
