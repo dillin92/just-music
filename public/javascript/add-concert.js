@@ -15,7 +15,4 @@ $("#save-concert").click(function() {
 
 });
 
-// $(document).ready(function(){
-//     $('.datepicker').datepicker();
-//   });
 

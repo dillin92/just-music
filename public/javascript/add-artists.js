@@ -15,7 +15,5 @@ $("#search-artist").click(function() {
             $("#top-artists").append(artistCard)
             $(artistCard).append(artistName, artistImg);
             });
-            // text(data.artists[0].strArtist).append('<img src="' + data.artists[0].strArtistThumb + '" />');
-            // $("#top-artists").append(artistName, artistImg).prepend(artistCard);
         });
     });
