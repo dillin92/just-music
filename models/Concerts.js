@@ -6,12 +6,12 @@ class Concerts extends Model {}
 Concerts.init(
     {
         id: {
-            type: dataTypes.STRING,
+            type: DataTypes.INTEGER,
             allowNull: false,
             primaryKey: true,
             autoIncrement: true
         },
-        concert_Nnme: {
+        concert_name: {
             type: DataTypes.STRING,
             allowNull: true
         },
@@ -39,4 +39,4 @@ Concerts.init(
     }
 );
 
-moodule.exports = Concerts;
+module.exports = Concerts;

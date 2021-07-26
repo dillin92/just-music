@@ -7,7 +7,7 @@ router.get('/', (req,res) => {
    Post.findAll({
        attributes: [
            'id',
-           'post_url',
+           'post_body',
            'title',
            'created_at',
        ],
@@ -16,20 +16,20 @@ router.get('/', (req,res) => {
                model: Comment,
                attributes: ['id', 'comment_text', 'post_id', 'user_id', 'created_at'],
                include: {
-                   module: User,
-                   attributes: ['username']
+                   model: User,
+                   attributes: ['email_address']
                }
            },
            { 
                model: User,
-               attributes: ['username']
+               attributes: ['email_address']
            }
        ]
    })
         .then(dbPostData => {
             const posts = dbPostData.map(post => post.get({ plain: true }));
 
-            res.render('homepage', { posts });
+            res.render('homepage', { posts }); 
         })
         .catch(err => {
             console.log(err);
@@ -38,7 +38,7 @@ router.get('/', (req,res) => {
 });
 
 router.get('/login', (req, res) => {
-    if (req.session.loggiedIn) {
+    if (req.session.loggedIn) {
         res.redirect('/');
         return;
     }

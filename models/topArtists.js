@@ -6,15 +6,25 @@ class TopArtists extends Model {}
 TopArtists.init(
     {
         id: {
-            type: dataTypes.INTEGER,
+            type: DataTypes.INTEGER,
             allowNull: false,
             primaryKey: true,
             autoIncrement: true
         },
-        artist: {
-            artistName: DataTypes.STRING,
-            artistImg: DataTypes.STRING,
-            allowNull: true
+
+        artist_name: {
+                type: DataTypes.STRING,
+                allowNull: false,
+                validate: {
+                    len: [1]
+                }
+
+
+            },
+
+        artist_img: {
+            type: DataTypes.STRING,
+            allowNull: false
         },
         user_id: {
             type: DataTypes.INTEGER,
@@ -32,4 +42,4 @@ TopArtists.init(
     }
 );
 
-moodule.exports = TopArtists;
+module.exports = TopArtists;
